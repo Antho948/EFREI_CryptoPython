@@ -22,12 +22,10 @@ def encryptage(valeur):
   
 @app.route('/decrypt/<string:valeur_chiffree>')
 def decryptage(valeur_chiffree):
-    try:
-        token_bytes = base64.urlsafe_b64decode(valeur_chiffree.encode())  # Décodage Base64
-        valeur_dechiffree = f.decrypt(token_bytes).decode()  # Déchiffrement
-        return f"Valeur décryptée : {valeur_dechiffree}"
-    except Exception as e:
-        return f"Erreur lors du déchiffrement : {str(e)}"
+  valeur_bytes = valeur.encode()  # Conversion str -> bytes
+  token = f.decrypt(valeur_bytes)  # Encrypt la valeur
+  return f"Valeur encryptée : {token.decode()}"  # Retourne le token en str
+    
 
 if __name__ == "__main__":
   app.run(debug=True)
