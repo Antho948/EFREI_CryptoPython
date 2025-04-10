@@ -4,7 +4,6 @@ from flask import render_template
 from flask import json
 from urllib.request import urlopen
 import sqlite3
-import Base64
                                                                                                                                        
 app = Flask(__name__)                                                                                                                  
                                                                                                                                        
@@ -20,12 +19,6 @@ def encryptage(valeur):
     valeur_bytes = valeur.encode()  # Conversion str -> bytes
     token = f.encrypt(valeur_bytes)  # Encrypt la valeur
     return f"Valeur encryptée : {token.decode()}"  # Retourne le token en str
-  
-@app.route('/decrypt/<string:valeur_chiffree>')
-def decryptage(valeur_chiffree):
-  valeur_bytes = valeur.encode()  # Conversion str -> bytes
-  token = f.decrypt(valeur_bytes)  # Encrypt la valeur
-  return f"Valeur encryptée : {token.decode()}"  # Retourne le token en str
     
 
 if __name__ == "__main__":
