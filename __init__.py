@@ -20,10 +20,10 @@ def encryptage(valeur):
     token = f.encrypt(valeur_bytes)  # Encrypt la valeur
     return f"Valeur encryptée : {token.decode()}"  # Retourne le token en str
   
-@app.route('/decrypt/<string:valeur>')
-def encryptage(valeur):
-    valeur_bytes = valeur.encode()  # Conversion str -> bytes
-    token = f.decrypt(valeur_bytes)  # Encrypt la valeur
+@app.route('/decrypt/<string:valeurd>')
+def encryptage(valeurd):
+    valeurd_bytes = valeurd.encode()  # Conversion str -> bytes
+    token = f.decrypt(valeurd_bytes)  # Encrypt la valeur
     return f"Valeur encryptée : {token.decode()}"  # Retourne le token en str
     
 
