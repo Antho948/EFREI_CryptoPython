@@ -1,10 +1,7 @@
 from cryptography.fernet import Fernet
-from flask import Flask, render_template_string, render_template, jsonify
-from flask import render_template
-from flask import json
-from urllib.request import urlopen
-import sqlite3
-                                                                                                                                       
+from flask import Flask, request
+import base64
+
 app = Flask(__name__)
 
 def generate_key(user_key):
@@ -48,7 +45,6 @@ def decryptage():
 
     except Exception as e:
         return f"Erreur lors du déchiffrement : {str(e)}"
-      
-if __name__ == "__main__":
-  app.run(debug=True)
 
+if __name__ == "__main__":
+    app.run(debug=True)
