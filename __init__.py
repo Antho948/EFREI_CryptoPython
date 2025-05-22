@@ -2,14 +2,15 @@ from cryptography.fernet import Fernet
 from flask import Flask, request
 import base64
 
-print("Bienvenue dans votre atelier CryptoPython")
-
 app = Flask(__name__)
 
 def generate_key(user_key):
     """Génère une clé Fernet à partir de la clé fournie par l'utilisateur"""
     user_key = user_key.ljust(32)[:32]  # Assurer que la clé fait 32 caractères
     return base64.urlsafe_b64encode(user_key.encode())
+
+@app.route('/', methods=['GET'])
+print("Bienvenue dans votre atelier CryptoPython")
 
 @app.route('/encrypt', methods=['GET'])
 def encryptage():
