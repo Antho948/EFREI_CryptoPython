@@ -11,7 +11,7 @@ def generate_key(user_key):
 
 @app.route('/', methods=['GET'])
 def accueil():
-    return "Bienvenue dans votre atelier CryptoPython"
+    return "Bienvenue sur ma page PA"
 
 @app.route('/encrypt', methods=['GET'])
 def encryptage():
