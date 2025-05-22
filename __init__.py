@@ -10,7 +10,8 @@ def generate_key(user_key):
     return base64.urlsafe_b64encode(user_key.encode())
 
 @app.route('/', methods=['GET'])
-print("Bienvenue dans votre atelier CryptoPython")
+def accueil():
+    return "Bienvenue dans votre atelier CryptoPython"
 
 @app.route('/encrypt', methods=['GET'])
 def encryptage():
