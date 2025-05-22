@@ -11,7 +11,7 @@ def generate_key(user_key):
 
 @app.route('/', methods=['GET'])
 def accueil():
-    return "Bienvenue sur ma page PA"
+    return "<strong>Bienvenue sur ma page PA</strong>"
 
 @app.route('/encrypt', methods=['GET'])
 def encryptage():
