@@ -2,6 +2,8 @@ from cryptography.fernet import Fernet
 from flask import Flask, request
 import base64
 
+print("Bienvenue dans votre atelier CryptoPython")
+
 app = Flask(__name__)
 
 def generate_key(user_key):
